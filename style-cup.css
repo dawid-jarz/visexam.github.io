@@ -200,3 +200,70 @@ body {
 h1,h2{
     text-align: center;
 }
+footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #7c606b;
+    color: white;
+}
+
+.cta {
+    background-color: #e91e63;
+    color: white;
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.cta h2 {
+    margin-bottom: 1rem;
+}
+
+.cta p {
+    padding-bottom: 1rem;
+}
+
+.cta button {
+    background-color: white;
+    color: #eda4bd;
+    border: none;
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #e91e63;
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.newsletter {
+    background-color: #00cce0; /* Miami blue */
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.newsletter p {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.newsletter input {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 0.5rem;
+}
+
+.newsletter button {
+    background-color: white;
+    color: #00cce0;
+    border: none;
+    padding: 0.6rem 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
