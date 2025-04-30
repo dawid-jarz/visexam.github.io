@@ -9,6 +9,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Toronto Cupcake</title>
+    <style>
+        /* Hide the arrows */
+        .arrow, .arrow2 {
+            display: none;
+        }
+
+        /* Add styling for clickable images */
+        .slider a img {
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <div id="navbar">
@@ -49,13 +60,15 @@
     <div id="main-content">
         <div class="slider">
             <div class="slide active">
-                <img src="/img/ChatGPT Image Apr 15, 2025, 03_26_19 PM.png" alt="Cupcake Image 1">
+                <a href="/cupcakes.html">
+                    <img src="/img/ChatGPT Image Apr 15, 2025, 03_26_19 PM.png" alt="Cupcake Image 1">
+                </a>
             </div>
             <div class="slide">
-                <img src="/img/ChatGPT Image Apr 15, 2025, 03_26_15 PM.png" alt="Cupcake Image 2">
+                <a href="/cupcakes.html">
+                    <img src="/img/ChatGPT Image Apr 15, 2025, 03_26_15 PM.png" alt="Cupcake Image 2">
+                </a>
             </div>
-            <span class="arrow left">&#10094;</span>
-            <span class="arrow right">&#10095;</span>
         </div>
         <div class="text-box">
             <h1>Welcome to Toronto Cupcake</h1>
@@ -66,13 +79,15 @@
     <div id="secondary-content">
         <div class="slider">
             <div class="slide active">
-                <img src="/img/seasonal-cupcake.png" alt="Cupcake Image 3">
+                <a href="/cupcakes.html">
+                    <img src="/img/seasonal-cupcake.png" alt="Cupcake Image 3">
+                </a>
             </div>
             <div class="slide">
-                <img src="/img/seasonal-cupcake-2.png" alt="Cupcake Image 4">
+                <a href="/cupcakes.html">
+                    <img src="/img/seasonal-cupcake-2.png" alt="Cupcake Image 4">
+                </a>
             </div>
-            <span class="arrow left2">&#10094;</span>
-            <span class="arrow right2">&#10095;</span>
         </div>
         <div class="text-box">
             <h1>Our Latest Creations</h1>
@@ -103,8 +118,6 @@
     // MAIN SLIDER
     const mainSlider = document.querySelector('#main-content .slider');
     const mainSlides = mainSlider.querySelectorAll('.slide');
-    const next = mainSlider.querySelector('.arrow.right');
-    const prev = mainSlider.querySelector('.arrow.left');
     let current = 0;
 
     function showSlide(index) {
@@ -126,15 +139,11 @@
         showSlide(current);
     }
 
-    next.addEventListener('click', nextSlide);
-    prev.addEventListener('click', prevSlide);
-    setInterval(nextSlide, 10000); // auto-change every 10 seconds
+    setInterval(nextSlide, 6000); // auto-change every 10 seconds
 
     // SECONDARY SLIDER
     const secondarySlider = document.querySelector('#secondary-content .slider');
     const secondarySlides = secondarySlider.querySelectorAll('.slide');
-    const next2 = secondarySlider.querySelector('.arrow.right2');
-    const prev2 = secondarySlider.querySelector('.arrow.left2');
     let current2 = 0;
 
     function showSecondarySlide(index) {
@@ -151,18 +160,8 @@
         showSecondarySlide(current2);
     }
 
-    function prevSecondarySlide() {
-        current2 = (current2 - 1 + secondarySlides.length) % secondarySlides.length;
-        showSecondarySlide(current2);
-    }
-
-    next2.addEventListener('click', nextSecondarySlide);
-    prev2.addEventListener('click', prevSecondarySlide);
-    setInterval(nextSecondarySlide, 10000); // Auto-slide
+    setInterval(nextSecondarySlide, 6000); // Auto-slide
 </script>
-
-
-
 
 </body>
 </html>
