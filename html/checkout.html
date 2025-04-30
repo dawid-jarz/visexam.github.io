@@ -10,8 +10,41 @@
 </head>
 <body class="cart-body">
   <div class="page-wrapper">
-    <!-- Navbar (reuse your existing navbar) -->
-    <div id="navbar"> ... </div>
+    <div id="navbar">
+      <div class="container">
+        <ul class="navbar-left">
+          <li><a href="../index.html"><img src="/img/toronto-cupcake-logo.png" alt="Logo"></a></li>
+        </ul>
+        <ol class="navbar-center">
+          <li><a href="cupcakes.html">Cupcakes</a>
+            <ul class="dropdown-content">
+              <li><a href="#">Cupcake bundles</a></li>
+              <li><a href="/html/single-cupcakes.html">Single cupcakes</a></li>
+              <li><a href="#">Custom cupcakes</a></li>
+              <li><a href="#">Event catering</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html">About</a>
+            <ul class="dropdown-content">
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </li>
+          <li><a href="order.html">Order</a>
+            <ul class="dropdown-content">
+              <li><a href="#">Order delivery</a></li>
+              <li><a href="#">Order pickup</a></li>
+              <li><a href="#">Order catering</a></li>
+            </ul>
+          </li>
+        </ol>
+        <ul class="navbar-right">
+          <li><span class="material-symbols-outlined">search</span></li>
+          <li><span class="material-symbols-outlined">person</span></li>
+          <li><a href="shoppingcart.html"><span class="material-symbols-outlined">shopping_bag</span></a></li>
+        </ul>
+      </div>
+    </div>
 
     <!-- Checkout Layout -->
     <main class="checkout-page" style="margin-top: 120px; padding: 40px;">
@@ -54,6 +87,7 @@
           </div>
 
           <button type="submit" id="place-order-btn">Place Order</button>
+
         </form>
 
         <!-- RIGHT: SUMMARY -->
@@ -118,6 +152,16 @@
 
       let subtotal = 0;
       summaryList.innerHTML = "";
+
+      document.getElementById("checkout-form").addEventListener("submit", function (e) {
+  e.preventDefault(); // prevent actual form submission
+
+  // Optional: validate fields if needed
+
+  // Redirect to thank you page
+  window.location.href = "thanksforpurchase.html";
+});
+
 
       cart.forEach(item => {
         const li = document.createElement("li");
