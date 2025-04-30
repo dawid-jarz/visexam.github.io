@@ -1,167 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <title>Toronto Cupcake</title>
-    <style>
-        /* Hide the arrows */
-        .arrow, .arrow2 {
-            display: none;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Toronto Cupcake</title>
 
-        /* Add styling for clickable images */
-        .slider a img {
-            cursor: pointer;
-        }
-    </style>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <div id="navbar">
-        <div class="container">
-          <ul class="navbar-left">
-            <li><a href="index.html"><img src="/img/toronto-cupcake-logo.png" alt=""></a></li>
+  <div id="navbar">
+    <div class="container">
+      <ul class="navbar-left">
+        <li><a href="index.html"><img src="/img/toronto-cupcake-logo.png" alt="Logo"></a></li>
+      </ul>
+      <ol class="navbar-center">
+        <li><a href="cupcakes.html">Cupcakes</a>
+          <ul class="dropdown-content">
+            <li><a href="#">Cupcake bundles</a></li>
+            <li><a href="/single-cupcakes.html">Single cupcakes</a></li>
+            <li><a href="#">Custom cupcakes</a></li>
+            <li><a href="#">Event catering</a></li>
           </ul>
-        <ol class="navbar-center">
-            <li><a href="cupcakes.html">Cupcakes</a>
-                <ul class="dropdown-content">
-                    <li><a href="#">Cupcake bundles</a></li>
-                    <li><a href="/single-cupcakes.html">Single cupcakes</a></li>
-                    <li><a href="#">Custom cupcakes</a></li>
-                    <li><a href="#">Event catering</a></li>
-                </ul>
-            </li>
-            <li><a href="about.html">About</a>
-                <ul class="dropdown-content">
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </li>
-            <li><a href="order.html">Order</a>
-                <ul class="dropdown-content">
-                    <li><a href="#">Order delivery</a></li>
-                    <li><a href="#">Order pickup</a></li>
-                    <li><a href="#">Order catering</a></li>
-                </ul>
-            </li>
-        </ol>
-        <ul class="navbar-right">
-            <li><span class="material-symbols-outlined">search</span></li> 
-            <li><span class="material-symbols-outlined">person</span></li>
-            <li><span class="material-symbols-outlined">shopping_bag</span></li>
-         </ul>        
-        </div>
+        </li>
+        <li><a href="about.html">About</a>
+          <ul class="dropdown-content">
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </li>
+        <li><a href="order.html">Order</a>
+          <ul class="dropdown-content">
+            <li><a href="#">Order delivery</a></li>
+            <li><a href="#">Order pickup</a></li>
+            <li><a href="#">Order catering</a></li>
+          </ul>
+        </li>
+      </ol>
+      <ul class="navbar-right">
+        <li><span class="material-symbols-outlined">search</span></li>
+        <li><span class="material-symbols-outlined">person</span></li>
+        <li><span class="material-symbols-outlined">shopping_bag</span></li>
+      </ul>
     </div>
-    <div id="main-content">
-        <div class="slider">
-            <div class="slide active">
-                <a href="/cupcakes.html">
-                    <img src="/img/ChatGPT Image Apr 15, 2025, 03_26_19 PM.png" alt="Cupcake Image 1">
-                </a>
-            </div>
-            <div class="slide">
-                <a href="/cupcakes.html">
-                    <img src="/img/ChatGPT Image Apr 15, 2025, 03_26_15 PM.png" alt="Cupcake Image 2">
-                </a>
-            </div>
-        </div>
-        <div class="text-box">
-            <h1>Welcome to Toronto Cupcake</h1>
-            <p>Enjoy our delicious cupcakes made with love. Choose from a wide range of flavors, including custom designs, event catering, and more. Explore our menu and place your order today!</p>
-        </div>
-    </div>
-    
-    <div id="secondary-content">
-        <div class="slider">
-            <div class="slide active">
-                <a href="/cupcakes.html">
-                    <img src="/img/seasonal-cupcake.png" alt="Cupcake Image 3">
-                </a>
-            </div>
-            <div class="slide">
-                <a href="/cupcakes.html">
-                    <img src="/img/seasonal-cupcake-2.png" alt="Cupcake Image 4">
-                </a>
-            </div>
-        </div>
-        <div class="text-box">
-            <h1>Our Latest Creations</h1>
-            <p>Explore our newest cupcake designs and flavor combinations. Perfect for any occasion, from casual gatherings to formal events.</p>
-        </div>
-    </div>
-    
-    <section class="cta" id="events">
-        <h2>Planning an Event?</h2>
-        <p>Let Toronto Cupcake cater your next celebration. We offer custom orders for weddings, birthdays, corporate events, and more!</p>
-        <button>Book Us Now</button>
-    </section>
-    
-    <section class="section newsletter" id="newsletter">
-        <h2>Stay Sweet – Join Our Newsletter</h2>
-        <p>Get updates on new flavors, special offers, and local charity events.</p>
-        <input type="email" placeholder="Enter your email" />
-        <button>Sign Up</button>
-    </section>
-    
-    <footer id="contact">
-        <p>Follow us on social media @TorontoCupcake | info@torontocupcake.ca</p>
-        <p>&copy; 2025 Toronto Cupcake. All rights reserved.</p>
-    </footer>
-    
+  </div>
 
-    <script>
-    // MAIN SLIDER
-    const mainSlider = document.querySelector('#main-content .slider');
-    const mainSlides = mainSlider.querySelectorAll('.slide');
-    let current = 0;
+  <div id="main-content">
+    <div class="slider" data-slider>
+      <div class="slide active"><a href="/cupcakes.html"><img src="/img/ChatGPT Image Apr 15, 2025, 03_26_19 PM.png" alt="Cupcake 1"></a></div>
+      <div class="slide"><a href="/cupcakes.html"><img src="/img/ChatGPT Image Apr 15, 2025, 03_26_15 PM.png" alt="Cupcake 2"></a></div>
+    </div>
+    <div class="text-box">
+      <h1>Welcome to Toronto Cupcake</h1>
+      <p>Enjoy our delicious cupcakes made with love. Choose from a wide range of flavors, including custom designs, event catering, and more.</p>
+    </div>
+  </div>
 
-    function showSlide(index) {
-        mainSlides.forEach((slide, i) => {
-            slide.classList.remove('active');
-            if (i === index) {
-                slide.classList.add('active');
-            }
+  <div id="secondary-content">
+    <div class="slider" data-slider>
+      <div class="slide active"><a href="/cupcakes.html"><img src="/img/seasonal-cupcake.png" alt="Cupcake 3"></a></div>
+      <div class="slide"><a href="/cupcakes.html"><img src="/img/seasonal-cupcake-2.png" alt="Cupcake 4"></a></div>
+    </div>
+    <div class="text-box">
+      <h1>Our Latest Creations</h1>
+      <p>Explore our newest cupcake designs and flavor combinations. Perfect for any occasion.</p>
+    </div>
+  </div>
+
+  <section class="cta" id="events">
+    <h2>Planning an Event?</h2>
+    <p>Let Toronto Cupcake cater your next celebration. We offer custom orders for weddings, birthdays, corporate events, and more!</p>
+    <button>Book Us Now</button>
+  </section>
+
+  <section class="section newsletter" id="newsletter">
+    <h2>Stay Sweet – Join Our Newsletter</h2>
+    <p>Get updates on new flavors, special offers, and local charity events.</p>
+    <input type="email" placeholder="Enter your email" />
+    <button>Sign Up</button>
+  </section>
+
+  <footer id="contact">
+    <p>Follow us on social media @TorontoCupcake | info@torontocupcake.ca</p>
+    <p>&copy; 2025 Toronto Cupcake. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('[data-slider]').forEach(slider => {
+      const slides = slider.querySelectorAll('.slide');
+      let index = 0;
+
+      function showSlide(i) {
+        slides.forEach((slide, idx) => {
+          slide.classList.toggle('active', idx === i);
         });
-    }
+      }
 
-    function nextSlide() {
-        current = (current + 1) % mainSlides.length;
-        showSlide(current);
-    }
-
-    function prevSlide() {
-        current = (current - 1 + mainSlides.length) % mainSlides.length;
-        showSlide(current);
-    }
-
-    setInterval(nextSlide, 6000); // auto-change every 10 seconds
-
-    // SECONDARY SLIDER
-    const secondarySlider = document.querySelector('#secondary-content .slider');
-    const secondarySlides = secondarySlider.querySelectorAll('.slide');
-    let current2 = 0;
-
-    function showSecondarySlide(index) {
-        secondarySlides.forEach((slide, i) => {
-            slide.classList.remove('active');
-            if (i === index) {
-                slide.classList.add('active');
-            }
-        });
-    }
-
-    function nextSecondarySlide() {
-        current2 = (current2 + 1) % secondarySlides.length;
-        showSecondarySlide(current2);
-    }
-
-    setInterval(nextSecondarySlide, 6000); // Auto-slide
-</script>
-
+      setInterval(() => {
+        index = (index + 1) % slides.length;
+        showSlide(index);
+      }, 6000);
+    });
+  </script>
 </body>
 </html>
