@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Cart - Toronto Cupcake</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="cart-body">
+    <div class="page-wrapper">
+  <!-- Navbar (reuse your existing one) -->
+  <div id="navbar">
+    <div class="container">
+      <ul class="navbar-left">
+        <li><a href="index.html"><img src="/img/toronto-cupcake-logo.png" alt="Logo"></a></li>
+      </ul>
+      <ol class="navbar-center">
+        <li><a href="cupcakes.html">Cupcakes</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="order.html">Order</a></li>
+      </ol>
+      <ul class="navbar-right">
+        <li><span class="material-symbols-outlined">search</span></li>
+        <li><span class="material-symbols-outlined">person</span></li>
+        <li><span class="material-symbols-outlined">shopping_bag</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Main Cart Section -->
+  <main class="cart-page" style="margin-top: 120px; padding: 40px;">
+    <h1>Your Shopping Cart</h1>
+
+    <div id="cart-container">
+      <table id="cart-table">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Item</th>
+            <th>Qty</th>
+            <th>Price</th>
+            <th>Total</th>
+            <th>Remove</th>
+          </tr>
+        </thead>
+        <tbody id="cart-items">
+          <!-- JS-generated rows -->
+        </tbody>
+      </table>
+
+      <div class="cart-summary">
+        <h2>Total: $<span id="cart-total">0.00</span></h2>
+        <button id="checkout-btn">Checkout</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Follow us @TorontoCupcake | info@torontocupcake.ca</p>
+    <p>&copy; 2025 Toronto Cupcake. All rights reserved.</p>
+  </footer>
+</div>
+
+<script>
+    const DEFAULT_ITEM = {
+      name: "Bundle 1: Vanilla Dream x9",
+      price: 30.00,
+      qty: 1,
+      image: "/img/bundle1-vanilla.png"
+    };
+  
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  
+    // Inject default item before anything else
+    if (!cart.some(item => item.name === DEFAULT_ITEM.name)) {
+      cart.push(DEFAULT_ITEM);
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
+  
+    function updateCart() {
+      const tbody = document.getElementById("cart-items");
+      const totalEl = document.getElementById("cart-total");
+      tbody.innerHTML = "";
+      let total = 0;
+  
+      cart.forEach((item, index) => {
+        const row = document.createElement("tr");
+  
+        row.innerHTML = `
+  <td>
+    <img src="${item.image}" alt="${item.name}" 
+         onerror="this.src='https://via.placeholder.com/80'; this.alt='Image not found';"
+         style="width: 80px; height: auto; border-radius: 8px; object-fit: cover; display: block;" />
+  </td>
+  <td>${item.name}</td>
+  <td>${item.qty}</td>
+  <td>$${item.price.toFixed(2)}</td>
+  <td>$${(item.qty * item.price).toFixed(2)}</td>
+  <td><button onclick="removeItem(${index})">✕</button></td>
+`;
+
+  
+        total += item.qty * item.price;
+        tbody.appendChild(row);
+      });
+  
+      totalEl.textContent = total.toFixed(2);
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
+  
+    function removeItem(index) {
+      // Prevent removal of the default item
+      if (cart[index].name === DEFAULT_ITEM.name) {
+        alert("This item is fixed for the prototype.");
+        return;
+      }
+  
+      cart.splice(index, 1);
+      updateCart();
+    }
+  
+    document.addEventListener("DOMContentLoaded", updateCart);
+  </script>
+  
+</body>
+</html>
