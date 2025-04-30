@@ -63,26 +63,40 @@
         </div>
     </div>
     
+    <div id="secondary-content">
+        <div class="slider">
+            <div class="slide active">
+                <img src="/img/secondary-image-1.png" alt="Cupcake Image 3">
+            </div>
+            <div class="slide">
+                <img src="/img/secondary-image-2.png" alt="Cupcake Image 4">
+            </div>
+            <span class="arrow left">&#10094;</span>
+            <span class="arrow right">&#10095;</span>
+        </div>
+        <div class="text-box">
+            <h1>Our Latest Creations</h1>
+            <p>Explore our newest cupcake designs and flavor combinations. Perfect for any occasion, from casual gatherings to formal events.</p>
+        </div>
+    </div>
+    
     <section class="cta" id="events">
         <h2>Planning an Event?</h2>
         <p>Let Toronto Cupcake cater your next celebration. We offer custom orders for weddings, birthdays, corporate events, and more!</p>
         <button>Book Us Now</button>
-      </section>
+    </section>
     
-      <section class="section newsletter" id="newsletter">
+    <section class="section newsletter" id="newsletter">
         <h2>Stay Sweet – Join Our Newsletter</h2>
         <p>Get updates on new flavors, special offers, and local charity events.</p>
         <input type="email" placeholder="Enter your email" />
         <button>Sign Up</button>
-      </section>
+    </section>
     
-      <footer id="contact">
+    <footer id="contact">
         <p>Follow us on social media @TorontoCupcake | info@torontocupcake.ca</p>
         <p>&copy; 2025 Toronto Cupcake. All rights reserved.</p>
-      </footer>
-    </body>
-    </html>
-    
+    </footer>
     
     <script>
         const slides = document.querySelectorAll('.slide');
@@ -113,6 +127,6 @@
         prev.addEventListener('click', prevSlide);
     
         setInterval(nextSlide, 10000); // auto-change every 10 seconds
-    </script>    
+    </script>
 </body>
 </html>

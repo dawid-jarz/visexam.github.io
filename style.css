@@ -191,6 +191,36 @@ body {
     right: 15px;
 }
 
+/* SECONDARY CONTENT (swapped places between text and image) */
+#secondary-content {
+    display: flex;
+    flex-direction: row-reverse; /* Switch image and text */
+    padding: 20px 40px;
+    align-items: center; /* Center content vertically */
+    justify-content: space-between; /* Ensure the content is spaced correctly */
+}
+
+.text-box {
+    flex: 1;
+    padding-right: 20px; /* Adjusted padding for right-side text */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center the text */
+    height: 100%; /* Ensure it takes full height to center properly */
+}
+
+.text-box h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.text-box p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+
 /* RESPONSIVE STYLES */
 @media (max-width: 768px) {
     .navbar-center {
@@ -248,25 +278,30 @@ body {
         margin-top: 20px;
     }
 }
+
 footer {
     text-align: center;
     padding: 1em;
     background-color: #7c606b;
     color: white;
-  }
-  .cta {
+}
+
+.cta {
     background-color: #e91e63;
     color: white;
     text-align: center;
     padding: 3rem 2rem;
-  }
-  .cta h2 {
+}
+
+.cta h2 {
     margin-bottom: 1rem;
-  }
-  .cta p{
+}
+
+.cta p {
     padding-bottom: 1rem;
-  }
-  .cta button {
+}
+
+.cta button {
     background-color: white;
     color: #eda4bd;
     border: none;
@@ -274,30 +309,35 @@ footer {
     font-size: 1rem;
     border-radius: 5px;
     cursor: pointer;
-  }
-  footer {
+}
+
+footer {
     background-color: #e91e63;
     padding: 2rem;
     text-align: center;
     font-size: 0.9rem;
-  }
-  .newsletter {
+}
+
+.newsletter {
     background-color: #00cce0; /* Miami blue */
     color: white;
     padding: 2rem;
     text-align: center;
-  }
-  .newsletter p{
+}
+
+.newsletter p {
     padding-top: 1rem;
     padding-bottom: 1rem;
-  }
-  .newsletter input {
+}
+
+.newsletter input {
     padding: 0.5rem;
     border-radius: 5px;
     border: 1px solid #ccc;
     margin-right: 0.5rem;
-  }
-  .newsletter button {
+}
+
+.newsletter button {
     background-color: white;
     color: #00cce0;
     border: none;
@@ -305,5 +345,4 @@ footer {
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
-  }
-  
+}
