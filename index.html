@@ -51,8 +51,10 @@
 
   <div id="main-content">
     <div class="slider" data-slider>
-      <div class="slide active"><a href="/cupcakes.html"><img src="/img/ChatGPT Image Apr 15, 2025, 03_26_19 PM.png" alt="Cupcake 1"></a></div>
-      <div class="slide"><a href="/cupcakes.html"><img src="/img/ChatGPT Image Apr 15, 2025, 03_26_15 PM.png" alt="Cupcake 2"></a></div>
+        <div class="slider-track">
+      <div class="slide"><a href="/cupcakes.html"><img src="/img/regular1.png" alt="Cupcake 1"></a></div>
+      <div class="slide"><a href="/cupcakes.html"><img src="/img/bundle1.png" alt="Cupcake 2"></a></div>
+        </div>
     </div>
     <div class="text-box">
       <h1>Welcome to Toronto Cupcake</h1>
@@ -62,9 +64,11 @@
 
   <div id="secondary-content">
     <div class="slider" data-slider>
-      <div class="slide active"><a href="/cupcakes.html"><img src="/img/seasonal-cupcake.png" alt="Cupcake 3"></a></div>
-      <div class="slide"><a href="/cupcakes.html"><img src="/img/seasonal-cupcake-2.png" alt="Cupcake 4"></a></div>
+        <div class="slider-track">
+      <div class="slide"><a href="/cupcakes.html"><img src="/img/easter1.png" alt="Cupcake 3"></a></div>
+      <div class="slide"><a href="/cupcakes.html"><img src="/img/easter-bundle.png" alt="Cupcake 4"></a></div>
     </div>
+</div>
     <div class="text-box">
       <h1>Our Latest Creations</h1>
       <p>Explore our newest cupcake designs and flavor combinations. Perfect for any occasion.</p>
@@ -91,20 +95,21 @@
 
   <script>
     document.querySelectorAll('[data-slider]').forEach(slider => {
-      const slides = slider.querySelectorAll('.slide');
+      const track = slider.querySelector('.slider-track');
+      const slides = track.querySelectorAll('.slide');
+      const totalSlides = slides.length;
       let index = 0;
-
-      function showSlide(i) {
-        slides.forEach((slide, idx) => {
-          slide.classList.toggle('active', idx === i);
-        });
+  
+      function moveToSlide(i) {
+        track.style.transform = `translateX(-${i * 100}%)`;
       }
-
+  
       setInterval(() => {
-        index = (index + 1) % slides.length;
-        showSlide(index);
+        index = (index + 1) % totalSlides;
+        moveToSlide(index);
       }, 6000);
     });
   </script>
+  
 </body>
 </html>

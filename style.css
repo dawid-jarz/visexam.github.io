@@ -131,29 +131,31 @@ body {
 }
 
 .slider {
-    flex: 1; /* Takes up remaining space */
+    width: 100%;
+    overflow: hidden;
     position: relative;
+  }
+
+  .slider-track {
+    display: flex;
+    transition: transform 0.8s ease-in-out;
+    width: 100%;
+  }
+
+  .slide {
+    flex: 0 0 100%;
     max-width: 100%;
-    width: auto;
-}
+  }
 
-.slide {
-    display: none;
-    position: absolute;
-    width: 100%;
-}
-
-.slide.active {
+  .slide img {
+    width: 80%;         /* ✅ shrink image to 80% of the slider width */
+    height: auto;       /* ✅ maintain aspect ratio */
+    object-fit: contain;/* ✅ ensure entire image fits */
     display: block;
-    position: relative;
-}
-
-.slide img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover; /* Ensure image covers the space without distortion */
-}
+    margin: 0 auto;     /* ✅ center the image */
+  }
+  
+  
 
 .text-box {
     flex: 1; /* Takes up remaining space next to the slider */
