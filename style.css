@@ -131,11 +131,11 @@ body {
 }
 
 .slider {
-    width: 100%;
+    flex: 0 0 75%; 
+    max-width: 75%;
     overflow: hidden;
     position: relative;
-  }
-
+}
   .slider-track {
     display: flex;
     transition: transform 0.8s ease-in-out;
@@ -157,11 +157,11 @@ body {
   
   
 
-.text-box {
-    flex: 1; /* Takes up remaining space next to the slider */
-    padding-left: 20px;
+  .text-box {
+    flex: 0 0 25%; /* or width: 60%; */
+    max-width: 60%;
+    padding-left: 40px; /* optional: increase spacing between image and text */
 }
-
 .text-box h1 {
     font-size: 2rem;
     margin-bottom: 20px;
