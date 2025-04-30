@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Toronto Cupcake</title>
+</head>
+<body>
+    <div id="navbar">
+        <div class="container">
+          <ul class="navbar-left">
+            <li><a href="index.html"><img src="/img/toronto-cupcake-logo.png" alt=""></a></li>
+          </ul>
+        <ol class="navbar-center">
+            <li><a href="cupcakes.html">Cupcakes</a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Cupcake bundles</a></li>
+                    <li><a href="/single-cupcakes.html">Single cupcakes</a></li>
+                    <li><a href="#">Custom cupcakes</a></li>
+                    <li><a href="#">Event catering</a></li>
+                </ul>
+            </li>
+            <li><a href="about.html">About</a>
+                <ul class="dropdown-content">
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </li>
+            <li><a href="order.html">Order</a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Order delivery</a></li>
+                    <li><a href="#">Order pickup</a></li>
+                    <li><a href="#">Order catering</a></li>
+                </ul>
+            </li>
+        </ol>
+        <ul class="navbar-right">
+            <li><span class="material-symbols-outlined">search</span></li> 
+            <li><span class="material-symbols-outlined">person</span></li>
+            <li><span class="material-symbols-outlined">shopping_bag</span></li>
+         </ul>        
+        </div>
+    </div>
+    <div id="main-content">
+        <div class="slider">
+            <div class="slide active">
+                <img src="/img/ChatGPT Image Apr 15, 2025, 03_26_19 PM.png" alt="Cupcake Image 1">
+            </div>
+            <div class="slide">
+                <img src="/img/ChatGPT Image Apr 15, 2025, 03_26_15 PM.png" alt="Cupcake Image 2">
+            </div>
+            <span class="arrow left">&#10094;</span>
+            <span class="arrow right">&#10095;</span>
+        </div>
+        <div class="text-box">
+            <h1>Welcome to Toronto Cupcake</h1>
+            <p>Enjoy our delicious cupcakes made with love. Choose from a wide range of flavors, including custom designs, event catering, and more. Explore our menu and place your order today!</p>
+        </div>
+    </div>
+    
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const next = document.querySelector('.arrow.right');
+        const prev = document.querySelector('.arrow.left');
+        let current = 0;
+    
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+    
+        function nextSlide() {
+            current = (current + 1) % slides.length;
+            showSlide(current);
+        }
+    
+        function prevSlide() {
+            current = (current - 1 + slides.length) % slides.length;
+            showSlide(current);
+        }
+    
+        next.addEventListener('click', nextSlide);
+        prev.addEventListener('click', prevSlide);
+    
+        setInterval(nextSlide, 10000); // auto-change every 10 seconds
+    </script>    
+</body>
+</html>
