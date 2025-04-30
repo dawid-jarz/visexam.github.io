@@ -301,3 +301,38 @@ footer {
     border-radius: 5px;
     cursor: pointer;
   }
+  #secondary-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #fff;
+    flex-direction: row-reverse; /* Makes image appear on the right */
+}
+
+#secondary-content .slider,
+#secondary-content .text-box {
+    flex: 1;
+}
+
+#secondary-content .slider img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+#secondary-content .text-box {
+    padding-right: 20px;
+}
+
+@media (max-width: 768px) {
+    #secondary-content {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    #secondary-content .text-box {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+}
