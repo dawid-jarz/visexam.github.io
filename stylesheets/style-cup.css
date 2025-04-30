@@ -267,3 +267,6 @@ footer {
     border-radius: 5px;
     cursor: pointer;
 }
+.navbar-right a{
+    color: #555;
+}
