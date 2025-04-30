@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout - Toronto Cupcake</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="cart-body">
+  <div class="page-wrapper">
+    <!-- Navbar (reuse your existing navbar) -->
+    <div id="navbar"> ... </div>
+
+    <!-- Checkout Layout -->
+    <main class="checkout-page" style="margin-top: 120px; padding: 40px;">
+      <h1>Checkout</h1>
+      <div class="checkout-grid">
+        <!-- LEFT: FORM -->
+        <form id="checkout-form">
+          <h2>Customer Info</h2>
+          <label>Name</label>
+          <input type="text" required />
+
+          <label>Email</label>
+          <input type="email" required />
+
+          <label>Phone</label>
+          <input type="tel" required />
+
+          <h3>Choose fulfillment method:</h3>
+          <div class="option-buttons">
+            <button type="button" id="pickup-btn" class="active">Pickup (Free)</button>
+            <button type="button" id="delivery-btn">Delivery (+$5.00)</button>
+          </div>
+
+          <div id="delivery-fields" style="display: none; margin-top: 20px;">
+            <label>Address</label>
+            <input type="text" placeholder="123 Cupcake Lane" />
+            <label>City</label>
+            <input type="text" placeholder="Toronto" />
+            <label>Postal Code</label>
+            <input type="text" placeholder="A1B 2C3" />
+          </div>
+
+          <button type="submit" id="place-order-btn">Place Order</button>
+        </form>
+
+        <!-- RIGHT: SUMMARY -->
+        <div class="order-summary">
+          <h2>Your Order</h2>
+          <ul id="summary-list"></ul>
+          <p>Subtotal: $<span id="summary-subtotal">0.00</span></p>
+          <p>Delivery Fee: $<span id="summary-delivery">0.00</span></p>
+          <h3>Total: $<span id="summary-total">0.00</span></h3>
+        </div>
+      </div>
+    </main>
+    <section class="cta" id="events">
+        <h2>Planning an Event?</h2>
+        <p>Let Toronto Cupcake cater your next celebration. We offer custom orders for weddings, birthdays, corporate events, and more!</p>
+        <button>Book Us Now</button>
+      </section>
+    
+      <section class="section newsletter" id="newsletter">
+        <h2>Stay Sweet – Join Our Newsletter</h2>
+        <p>Get updates on new flavors, special offers, and local charity events.</p>
+        <input type="email" placeholder="Enter your email" />
+        <button>Sign Up</button>
+      </section>
+    
+      <footer id="contact">
+        <p>Follow us on social media @TorontoCupcake | info@torontocupcake.ca</p>
+        <p>&copy; 2025 Toronto Cupcake. All rights reserved.</p>
+      </footer>
+  </div>
+
+  <script>
+    const DELIVERY_FEE = 5;
+    let useDelivery = false;
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const pickupBtn = document.getElementById("pickup-btn");
+    const deliveryBtn = document.getElementById("delivery-btn");
+    const deliveryFields = document.getElementById("delivery-fields");
+
+    pickupBtn.addEventListener("click", () => {
+      useDelivery = false;
+      pickupBtn.classList.add("active");
+      deliveryBtn.classList.remove("active");
+      deliveryFields.style.display = "none";
+      updateSummary();
+    });
+
+    deliveryBtn.addEventListener("click", () => {
+      useDelivery = true;
+      deliveryBtn.classList.add("active");
+      pickupBtn.classList.remove("active");
+      deliveryFields.style.display = "block";
+      updateSummary();
+    });
+
+    function updateSummary() {
+      const summaryList = document.getElementById("summary-list");
+      const subtotalEl = document.getElementById("summary-subtotal");
+      const deliveryEl = document.getElementById("summary-delivery");
+      const totalEl = document.getElementById("summary-total");
+
+      let subtotal = 0;
+      summaryList.innerHTML = "";
+
+      cart.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = `${item.qty} × ${item.name} — $${(item.qty * item.price).toFixed(2)}`;
+        summaryList.appendChild(li);
+        subtotal += item.qty * item.price;
+      });
+
+      const delivery = useDelivery ? DELIVERY_FEE : 0;
+      const total = subtotal + delivery;
+
+      subtotalEl.textContent = subtotal.toFixed(2);
+      deliveryEl.textContent = delivery.toFixed(2);
+      totalEl.textContent = total.toFixed(2);
+    }
+
+    document.addEventListener("DOMContentLoaded", updateSummary);
+  </script>
+</body>
+</html>
