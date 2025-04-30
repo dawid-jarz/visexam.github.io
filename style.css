@@ -114,6 +114,11 @@ body {
 .navbar-center li:hover .dropdown-content {
     display: block;
 }
+.navbar-center a:hover, .cta button:hover {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    transform: scale(1.05);
+}
+
 
 /* MAIN CONTENT */
 #main-content {
