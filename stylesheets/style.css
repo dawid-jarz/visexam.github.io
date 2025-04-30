@@ -34,6 +34,10 @@ body {
 }
 
 /* LEFT + RIGHT */
+.navbar-right a{
+    color: #555;
+}
+
 .navbar-left,
 .navbar-right {
     display: flex;
