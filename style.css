@@ -191,6 +191,14 @@ body {
     right: 15px;
 }
 
+.arrow.left2 {
+    left: 15px;
+}
+
+.arrow.right2 {
+    right: 15px;
+}
+
 /* SECONDARY CONTENT (swapped places between text and image) */
 #secondary-content {
     display: flex;

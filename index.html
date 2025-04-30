@@ -66,13 +66,13 @@
     <div id="secondary-content">
         <div class="slider">
             <div class="slide active">
-                <img src="/img/secondary-image-1.png" alt="Cupcake Image 3">
+                <img src="/img/seasonal-cupcake.png" alt="Cupcake Image 3">
             </div>
             <div class="slide">
-                <img src="/img/secondary-image-2.png" alt="Cupcake Image 4">
+                <img src="/img/seasonal-cupcake-2.png" alt="Cupcake Image 4">
             </div>
-            <span class="arrow left">&#10094;</span>
-            <span class="arrow right">&#10095;</span>
+            <span class="arrow left2">&#10094;</span>
+            <span class="arrow right2">&#10095;</span>
         </div>
         <div class="text-box">
             <h1>Our Latest Creations</h1>
@@ -98,35 +98,71 @@
         <p>&copy; 2025 Toronto Cupcake. All rights reserved.</p>
     </footer>
     
+
     <script>
-        const slides = document.querySelectorAll('.slide');
-        const next = document.querySelector('.arrow.right');
-        const prev = document.querySelector('.arrow.left');
-        let current = 0;
-    
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.classList.remove('active');
-                if (i === index) {
-                    slide.classList.add('active');
-                }
-            });
-        }
-    
-        function nextSlide() {
-            current = (current + 1) % slides.length;
-            showSlide(current);
-        }
-    
-        function prevSlide() {
-            current = (current - 1 + slides.length) % slides.length;
-            showSlide(current);
-        }
-    
-        next.addEventListener('click', nextSlide);
-        prev.addEventListener('click', prevSlide);
-    
-        setInterval(nextSlide, 10000); // auto-change every 10 seconds
-    </script>
+    // MAIN SLIDER
+    const mainSlider = document.querySelector('#main-content .slider');
+    const mainSlides = mainSlider.querySelectorAll('.slide');
+    const next = mainSlider.querySelector('.arrow.right');
+    const prev = mainSlider.querySelector('.arrow.left');
+    let current = 0;
+
+    function showSlide(index) {
+        mainSlides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            if (i === index) {
+                slide.classList.add('active');
+            }
+        });
+    }
+
+    function nextSlide() {
+        current = (current + 1) % mainSlides.length;
+        showSlide(current);
+    }
+
+    function prevSlide() {
+        current = (current - 1 + mainSlides.length) % mainSlides.length;
+        showSlide(current);
+    }
+
+    next.addEventListener('click', nextSlide);
+    prev.addEventListener('click', prevSlide);
+    setInterval(nextSlide, 10000); // auto-change every 10 seconds
+
+    // SECONDARY SLIDER
+    const secondarySlider = document.querySelector('#secondary-content .slider');
+    const secondarySlides = secondarySlider.querySelectorAll('.slide');
+    const next2 = secondarySlider.querySelector('.arrow.right2');
+    const prev2 = secondarySlider.querySelector('.arrow.left2');
+    let current2 = 0;
+
+    function showSecondarySlide(index) {
+        secondarySlides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            if (i === index) {
+                slide.classList.add('active');
+            }
+        });
+    }
+
+    function nextSecondarySlide() {
+        current2 = (current2 + 1) % secondarySlides.length;
+        showSecondarySlide(current2);
+    }
+
+    function prevSecondarySlide() {
+        current2 = (current2 - 1 + secondarySlides.length) % secondarySlides.length;
+        showSecondarySlide(current2);
+    }
+
+    next2.addEventListener('click', nextSecondarySlide);
+    prev2.addEventListener('click', prevSecondarySlide);
+    setInterval(nextSecondarySlide, 10000); // Auto-slide
+</script>
+
+
+
+
 </body>
 </html>
