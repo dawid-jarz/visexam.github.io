@@ -270,3 +270,6 @@ footer {
 .navbar-right a{
     color: #555;
 }
+#bundles a{
+    text-decoration: none;
+}
