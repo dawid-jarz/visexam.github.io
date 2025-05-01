@@ -133,8 +133,8 @@ color: white;
 }
 
 .cta {
-background-color: #e91e63;
-color: white;
+background-color: #f6a6c1;
+color: black;
 text-align: center;
 padding: 3rem 2rem;
 }
@@ -166,7 +166,7 @@ font-size: 0.9rem;
 
 .newsletter {
 background-color: #00cce0; /* Miami blue */
-color: white;
+color: black;
 padding: 2rem;
 text-align: center;
 }
