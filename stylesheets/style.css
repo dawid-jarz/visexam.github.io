@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #fff;
+    background-color: #fff0f5;
     color: #333;
 }
 
@@ -131,7 +131,7 @@ body {
     justify-content: space-between; /* Aligns content in two columns */
     align-items: center;
     padding: 20px 40px; /* Add some padding for spacing */
-    background-color: #fff;
+    background-color: #fff0f5;
 }
 
 .slider {

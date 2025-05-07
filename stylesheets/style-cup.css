@@ -196,6 +196,13 @@ body {
 }
 #regular{
     padding-top: 8rem;
+    background-color: #fff0f5;
+}
+#bundles{
+    background-color: #fff0f5;
+}
+#seasonal{
+    background-color: #fff0f5;
 }
 h1,h2{
     text-align: center;
