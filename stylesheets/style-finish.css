@@ -271,4 +271,46 @@ cursor: pointer;
     color: #555;
     font-weight: 500;
   }
-   
+  .recommend-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px; /* or whatever max width you prefer */
+    margin: 0 auto;
+    gap: 10px;
+  }
+  
+  .recommend-grid {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+    max-width: 90vw;
+  }
+  
+  
+  .arrow {
+    background-color: white;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    padding: 10px;
+    color: #c2185b;
+    z-index: 2;
+    transition: transform 0.2s ease;
+  }
+  
+  .arrow:hover {
+    transform: scale(1.2);
+  }
+  
+  .left-arrow {
+    margin-right: 10px;
+  }
+  
+  .right-arrow {
+    margin-left: 10px;
+  }
+  
