@@ -1,6 +1,7 @@
 # visualisering-eksamen
 
 ## How to open the website
+<<<<<<< HEAD
 go to :
 https://dawid-jarz.github.io/visexam.github.io/
 
@@ -14,3 +15,6 @@ The flow:
 5. Fill credentials
 6. Order
 7. Done
+=======
+The website is open at https://dawid-jarz.github.io/visexam.github.io/index.html
+>>>>>>> 103e27c (Fiks på README)
