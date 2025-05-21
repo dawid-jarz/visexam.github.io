@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -92,7 +93,34 @@
   <footer id="contact">
     <p>Follow us on social media @TorontoCupcake | info@torontocupcake.ca</p>
     <p>&copy; 2025 Toronto Cupcake. All rights reserved.</p>
-  </footer>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/torontocupcake" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.twitter.com/torontocupcake" target="_blank" aria-label="X (Twitter)">
+          <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://www.snapchat.com/add/torontocupcake" target="_blank" aria-label="Snapchat">
+          <i class="fab fa-snapchat-ghost"></i>
+      </a>
+  </div>
+</footer>
+<style>
+  .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 10px;
+  }
+  .social-icons a {
+      color: #000;
+      font-size: 24px;
+      text-decoration: none;
+  }
+  .social-icons a:hover {
+      color: #ff69b4; /* Example hover color */
+  }
+</style>
 
   <script>
     document.querySelectorAll('[data-slider]').forEach(slider => {
