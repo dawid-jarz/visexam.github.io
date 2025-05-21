@@ -50,41 +50,76 @@
     </div>
   </div>
 
-  <div id="regular">
-    <h1>Regular Cupcakes</h1>
-    <h2>Always available</h2>
-    <div class="cupcake-grid">
-      <div class="cupcake-card"><img src="../img/cupcakes single/vanilla.png" alt="Vanilla Delight"><p>Vanilla Delight</p></div>
-      <div class="cupcake-card"><img src="../img/cupcakes single/chocolate.png" alt="Chocolate Dream"><p>Chocolate Dream</p></div>
-      <div class="cupcake-card"><img src="../img/cupcakes single/strawberry.png" alt="Strawberry Swirl"><p>Strawberry Swirl</p></div>
-      <div class="cupcake-card"><img src="../img/cupcakes single/lemon.png" alt="Lemon Zing"><p>Lemon Zing</p></div>
-      <div class="cupcake-card"><img src="../img/cupcakes single/red-velvet.png" alt="Red Velvet"><p>Red Velvet</p></div>
+  <main class="cupcake-details">
+    <div class="cupcake-container">
+      <div class="cupcake-image">
+        <img src="../img/bundle1-vanilla.png" alt="Vanilla Cupcake" />
+      </div>
+      <div class="cupcake-description">
+        <h2>Vanilla Cupcake</h2>
+        <p>
+          Our classic Vanilla Cupcake is made with the finest ingredients, including real vanilla bean and creamy butter. Perfectly moist and topped with a swirl of vanilla buttercream frosting.
+        </p>
+        <h3>Price: $30</h3>
+        <h3>Allergens:</h3>
+        <ul>
+          <li>Contains: Wheat, Eggs, Milk</li>
+          <li>May contain traces of: Nuts, Soy</li>
+        </ul>
+        <div class="cart-actions">
+          <label for="quantity">Quantity:</label>
+          <input type="number" id="quantity" name="quantity" min="1" value="1" />
+          <button onclick="redirectToCart()">Add to Cart</button>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <div id="bundles">
-    <h1>Cupcake Bundles</h1>
-    <h2>New bundles every week</h2>
-    <div class="cupcake-grid">
-      <div class="cupcake-card"><a href="vanilla.html"><img src="../img/cupcakes single/vanilla-bundle.png" alt="Birthday Pack"><p>Vanilla Pack</p></a></div>
-      <div class="cupcake-card"><img src="../img/cupcakes single/lemon-bundle.png" alt="Family Bundle"><p>Lemon Pack</p></div>
-      <div class="cupcake-card"><img src="../img/cupcakes single/custom.png" alt="Party Combo"><p>Customized box</p></div>
-    </div>
-  </div>
-
-  <div id="seasonal">
-    <h1>Seasonal Easter 2025 Cupcakes</h1>
-    <h2>Available until 30th April</h2>
-    <div class="cupcake-grid">
-      <div class="cupcake-card"><img src="../img/cupcakes single/bunny-hop.png" alt="Bunny Hop"><p>Bunny Hop</p></div>
-      <div class="cupcake-card"><img src="../img/cupcakes single/easter-egg.png" alt="Easter Egg"><p>Easter Egg</p></div>
-      <div class="cupcake-card"><img src="../img/cupcakes single/carrot-field.png" alt="Carrot Field"><p>Carrot Field</p></div>
-      <div class="cupcake-card"><img src="../img/cupcakes single/easter-hole.png" alt="Spring Parade"><p>Spring Parade</p></div>
-      <div class="cupcake-card"><img src="../img/cupcakes single/peep.png" alt="Peep Quack"><p>Peep Quack</p></div>
-    </div>
-  </div>
-
+  </main>
   
+  <script>
+    function redirectToCart() {
+      window.location.href = "shoppingcart.html";
+    }
+  </script>
+  
+  <style>
+    .cart-actions {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  
+    .cart-actions label {
+      font-size: 1em;
+    }
+  
+    .cart-actions input[type="number"] {
+      width: 60px;
+      padding: 5px;
+      font-size: 1em;
+    }
+  
+    .cart-actions button {
+      padding: 10px 15px;
+      font-size: 1em;
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  
+    .cart-actions button:hover {
+      background-color: #ff85c2;
+    }
+  
+    .cupcake-description h3 {
+      margin-top: 15px;
+      font-size: 1.2em;
+      color: #333;
+    }
+  </style>
+
   <section class="section newsletter" id="newsletter">
     <h2>Stay Sweet – Join Our Newsletter</h2>
     <p>Get updates on new flavors, special offers, and local charity events.</p>
@@ -129,5 +164,60 @@
       color: #ff69b4; /* Example hover color */
   }
 </style>
-</body>
-</html>
+<style>
+    body{
+        background-color: #fff0f5;
+    }
+    .cupcake-details {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      gap: 20px;
+      padding-top: 200px;
+      padding-bottom: 80px;
+    }
+  
+    .cupcake-container {
+      display: flex;
+      max-width: 1200px;
+      gap: 30px;
+    }
+  
+    .cupcake-image img {
+      max-width: 300px;
+      border-radius: 10px;
+    }
+  
+    .cupcake-description {
+      max-width: 600px;
+      text-align: left; /* Ensure all text inside is aligned to the left */
+    }
+  
+    .cupcake-description h2 {
+      font-size: 2em;
+      margin-bottom: 10px;
+      text-align: left; /* Explicitly align the heading to the left */
+    }
+  
+    .cupcake-description p {
+      font-size: 1.2em;
+      margin-bottom: 15px;
+    }
+  
+    .cupcake-description h3 {
+      margin-top: 15px;
+      font-size: 1.2em;
+      color: #333;
+    }
+  
+    .cupcake-description ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+  
+    .cupcake-description ul li {
+      font-size: 1em;
+      margin-bottom: 5px;
+    }
+  </style>
