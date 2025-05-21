@@ -16,5 +16,4 @@ The flow:
 6. Order
 7. Done
 =======
-The website is open at https://dawid-jarz.github.io/visexam.github.io/index.html
->>>>>>> 103e27c (Fiks på README)
+

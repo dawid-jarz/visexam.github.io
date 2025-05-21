@@ -280,3 +280,65 @@ footer {
 #bundles a{
     text-decoration: none;
 }
+
+
+.carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .cupcake-carousel::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .cupcake-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 30px;
+    padding: 0 1rem;
+    max-width: 1050px; /* Approx. 5 cards × 200px + spacing */
+    -ms-overflow-style: none;  /* IE/Edge */
+    scrollbar-width: none;     /* Firefox */ 
+}
+  
+  .carousel-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 2.5rem;
+    color: #c2185b; /* Deep pink like in your image */
+    cursor: pointer;
+    padding: 0 0.5rem;
+    transition: transform 0.2s ease, color 0.2s ease;
+    user-select: none;
+  }
+  
+  .carousel-btn:hover {
+    transform: scale(1.2);
+    color: #e91e63;
+  }
+  
+  .carousel-btn.left::before {
+    content: '❮'; /* Unicode for left-pointing chevron */
+  }
+
+  .carousel-btn.left {
+    margin-right: 0.5rem;
+  }
+
+  .carousel-btn.right::before {
+    content: '❯'; /* Unicode for right-pointing chevron */
+  }
+  
+  .carousel-btn.right {
+    margin-left: 0.5rem;
+  }
+  
+  .cupcake-card {
+    flex: 0 0 auto; /* Make cards stay same size in horizontal scroll */
+    width: 200px;
+  }
+  

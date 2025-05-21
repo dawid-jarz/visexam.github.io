@@ -53,35 +53,49 @@
   <div id="regular">
     <h1>Regular Cupcakes</h1>
     <h2>Always available</h2>
-    <div class="cupcake-grid">
+    <div class="carousel-wrapper">
+      <button class="carousel-btn left" onclick="scrollCarousel('regular-carousel', -1)"></button>
+    <div class="cupcake-carousel" id="regular-carousel">
       <div class="cupcake-card"><img src="../img/cupcakes single/vanilla.png" alt="Vanilla Delight"><p>Vanilla Delight</p></div>
       <div class="cupcake-card"><img src="../img/cupcakes single/chocolate.png" alt="Chocolate Dream"><p>Chocolate Dream</p></div>
       <div class="cupcake-card"><img src="../img/cupcakes single/strawberry.png" alt="Strawberry Swirl"><p>Strawberry Swirl</p></div>
       <div class="cupcake-card"><img src="../img/cupcakes single/lemon.png" alt="Lemon Zing"><p>Lemon Zing</p></div>
       <div class="cupcake-card"><img src="../img/cupcakes single/red-velvet.png" alt="Red Velvet"><p>Red Velvet</p></div>
+      <div class="cupcake-card"><img src="../img/cupcakes single/blueberry-bonanza.png" alt="Blueberry Bonanza"><p>Blueberry Bonanza</p></div>
+      <div class="cupcake-card"><img src="../img/cupcakes single/oreo-optimism.png" alt="Oreo Optimism"><p>Oreo Optimism</p></div>
+      <div class="cupcake-card"><img src="../img/cupcakes single/toronto-toffee.png" alt="Toronto Toffee"><p>Toronto Toffee</p></div>
+    </div>
+    <button class="carousel-btn right" onclick="scrollCarousel('regular-carousel', 1)"></button>
+    </div>
     </div>
   </div>
 
   <div id="bundles">
     <h1>Cupcake Bundles</h1>
     <h2>New bundles every week</h2>
-    <div class="cupcake-grid">
+    <div class="carousel-wrapper">
+      <button class="carousel-btn left" onclick="scrollCarousel('bundle-carousel', -1)"></button>
+    <div class="cupcake-carousel" id="bundle-carousel">
       <div class="cupcake-card"><a href="vanilla.html"><img src="../img/cupcakes single/vanilla-bundle.png" alt="Birthday Pack"><p>Vanilla Pack</p></a></div>
       <div class="cupcake-card"><img src="../img/cupcakes single/lemon-bundle.png" alt="Family Bundle"><p>Lemon Pack</p></div>
       <div class="cupcake-card"><img src="../img/cupcakes single/custom.png" alt="Party Combo"><p>Customized box</p></div>
     </div>
+    <button class="carousel-btn right" onclick="scrollCarousel('bundle-carousel', 1)"></button>
   </div>
 
   <div id="seasonal">
     <h1>Seasonal Easter 2025 Cupcakes</h1>
     <h2>Available until 30th April</h2>
-    <div class="cupcake-grid">
+    <div class="carousel-wrapper">
+      <button class="carousel-btn left" onclick="scrollCarousel('seasonal-carousel', -1)"></button>
+    <div class="cupcake-carousel" id="seasonal-carousel">
       <div class="cupcake-card"><img src="../img/cupcakes single/bunny-hop.png" alt="Bunny Hop"><p>Bunny Hop</p></div>
       <div class="cupcake-card"><img src="../img/cupcakes single/easter-egg.png" alt="Easter Egg"><p>Easter Egg</p></div>
       <div class="cupcake-card"><img src="../img/cupcakes single/carrot-field.png" alt="Carrot Field"><p>Carrot Field</p></div>
       <div class="cupcake-card"><img src="../img/cupcakes single/easter-hole.png" alt="Spring Parade"><p>Spring Parade</p></div>
       <div class="cupcake-card"><img src="../img/cupcakes single/peep.png" alt="Peep Quack"><p>Peep Quack</p></div>
     </div>
+    <button class="carousel-btn right" onclick="scrollCarousel('seasonal-carousel', 1)"></button>
   </div>
 
   
@@ -129,5 +143,15 @@
       color: #ff69b4; /* Example hover color */
   }
 </style>
+
+<script>
+  function scrollCarousel(id, direction) {
+    const carousel = document.getElementById(id);
+    const scrollAmount = 250 * direction;
+    carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  }
+  </script>
+  
 </body>
 </html>
+
