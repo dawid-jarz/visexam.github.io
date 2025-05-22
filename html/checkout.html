@@ -48,11 +48,9 @@
       </div>
     </div>
 
-    <!-- Checkout Layout -->
     <main class="checkout-page" style="margin-top: 120px; padding: 40px;">
       <h1>Checkout</h1>
       <div class="checkout-grid">
-        <!-- LEFT: FORM -->
         <form id="checkout-form">
           <h2>Customer Info</h2>
           <label>Name</label>
@@ -92,7 +90,6 @@
 
         </form>
 
-        <!-- RIGHT: SUMMARY -->
         <div class="order-summary">
           <h2>Your Order</h2>
           <ul id="summary-list"></ul>
@@ -145,7 +142,7 @@
           text-decoration: none;
       }
       .social-icons a:hover {
-          color: #ff69b4; /* Example hover color */
+          color: #ff69b4;
       }
     </style>
   </div>
@@ -185,11 +182,9 @@
       summaryList.innerHTML = "";
 
       document.getElementById("checkout-form").addEventListener("submit", function (e) {
-  e.preventDefault(); // prevent actual form submission
+  e.preventDefault(); 
 
-  // Optional: validate fields if needed
 
-  // Redirect to thank you page
   window.location.href = "thanksforpurchase.html";
 });
 
