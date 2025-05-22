@@ -11,7 +11,6 @@
 </head>
 <body class="cart-body">
     <div class="page-wrapper">
-  <!-- Navbar (reuse your existing one) -->
   <div id="navbar">
     <div class="container">
       <ul class="navbar-left">
@@ -30,7 +29,6 @@
     </div>
   </div>
 
-  <!-- Main Cart Section -->
   <main class="cart-page" style="margin-top: 120px; padding: 40px;">
     <h1>Your Shopping Cart</h1>
 
@@ -101,7 +99,7 @@
       text-decoration: none;
   }
   .social-icons a:hover {
-      color: #ff69b4; /* Example hover color */
+      color: #ff69b4; 
   }
 </style>
 </div>
@@ -116,7 +114,6 @@
   
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
   
-    // Inject default item before anything else
     if (!cart.some(item => item.name === DEFAULT_ITEM.name)) {
       cart.push(DEFAULT_ITEM);
       localStorage.setItem("cart", JSON.stringify(cart));
@@ -154,7 +151,6 @@
     }
   
     function removeItem(index) {
-      // Prevent removal of the default item
       if (cart[index].name === DEFAULT_ITEM.name) {
         alert("This item is fixed for the prototype.");
         return;
